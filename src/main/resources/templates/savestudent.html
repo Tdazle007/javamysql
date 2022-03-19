@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form th:action="@{/students}" th:object="${addstudent}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" name="firstName" th:field ="*{firstName}">
+    <input type="text" name="lastName" th:field ="*{lastName}">
+    <input type="text" name="emailAddress" th:field ="*{emailAddress}">
+    <input type="text" name="guardianMobile" th:field ="*{guardianMobile}">
+    <input type="password" name="password" th:field ="*{password}">
+    <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>

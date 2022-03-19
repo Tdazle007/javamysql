@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>djd</title>
+</head>
+<body>
+<a th:href="@{/students/add}"><h1>Add Students</h1></a>
+
+
+<table>
+    <thead>
+    <tr>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>action</td>
+    </tr>
+    </thead>
+   <tbody>
+   <tr th:each="student : ${students}">
+       <td th:text="${student.firstName}"></td>
+       <td th:text="${student.lastName}"></td>
+       <td th:text="${student.emailAddress}"></td>
+       <td th:text="${student.guardianMobile}"></td>
+       <td>
+           <a th:href="@{/students/{studentId}(studentId=${student.id})}">Edit</a>
+           <a th:href="@{/students/delete/{deleteStudentId}(deleteStudentId=${student.id})}">Delete</a>
+       </td>
+   </tr>
+   </tbody>
+    <tfoot>
+    <tr>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>action</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
